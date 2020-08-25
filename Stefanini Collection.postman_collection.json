@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "ae6982d3-3f95-4821-87aa-3025a5237d77",
+		"name": "Stefanini Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/stefanini-api-rest/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stefanini-api-rest",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllPersons -  /api/v1/persons",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5OTE3MTU5Nn0.bDjes3H6-XWi2-NtYUvj96JAdnaFbc0oaNhuQ8GwHusvqCtyirTyxE0G9TEl3LN1eT80hO84GBOkVNjrDSnWWg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/stefanini-api-rest/api/v1/persons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stefanini-api-rest",
+						"api",
+						"v1",
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createPerson - /api/v1/persons",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5OTE3MTU5Nn0.bDjes3H6-XWi2-NtYUvj96JAdnaFbc0oaNhuQ8GwHusvqCtyirTyxE0G9TEl3LN1eT80hO84GBOkVNjrDSnWWg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\":\"josé silva\",\r\n    \"gender\":\"masculino\",\r\n    \"emailId\":\"email@localhost.com\",\r\n    \"dateBirth\":\"2020-08-24T21:54:04\",\r\n    \"placeBirth\":\"recife\",\r\n    \"nationality\":\"brasileira\",\r\n    \"cpf\":\"809.200.920-12\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/stefanini-api-rest/api/v1/persons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stefanini-api-rest",
+						"api",
+						"v1",
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPersonById - /api/v1/persons/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5OTE3MTU5Nn0.bDjes3H6-XWi2-NtYUvj96JAdnaFbc0oaNhuQ8GwHusvqCtyirTyxE0G9TEl3LN1eT80hO84GBOkVNjrDSnWWg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/stefanini-api-rest/api/v1/persons/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stefanini-api-rest",
+						"api",
+						"v1",
+						"persons",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatePerson - /api/v1/persons/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5OTE3MTU5Nn0.bDjes3H6-XWi2-NtYUvj96JAdnaFbc0oaNhuQ8GwHusvqCtyirTyxE0G9TEl3LN1eT80hO84GBOkVNjrDSnWWg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\":\"josé silva souza\",\r\n    \"gender\":\"masculino\",\r\n    \"emailId\":\"email@localhost.com\",\r\n    \"dateBirth\":\"2020-08-24T21:54:04\",\r\n    \"placeBirth\":\"recife\",\r\n    \"nationality\":\"brasileira\",\r\n    \"cpf\":\"809.200.920-12\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/stefanini-api-rest/api/v1/persons/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stefanini-api-rest",
+						"api",
+						"v1",
+						"persons",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletePerson - /api/v1/persons/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU5OTE3MTU5Nn0.bDjes3H6-XWi2-NtYUvj96JAdnaFbc0oaNhuQ8GwHusvqCtyirTyxE0G9TEl3LN1eT80hO84GBOkVNjrDSnWWg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/stefanini-api-rest/api/v1/persons/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"stefanini-api-rest",
+						"api",
+						"v1",
+						"persons",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
