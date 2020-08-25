@@ -14,27 +14,42 @@ export class PersonService {
   constructor(private http: HttpClient) { }
 
   getPerson(id: number): Observable<any> {
-    let tokenParse = JSON.parse(`${this.access_token}`)
-    return this.http.get(`${this.baseUrl}/${id}`, { headers:new HttpHeaders().append('Authorization', `Bearer ${tokenParse}`)});
+    var reqHeader = new HttpHeaders({ 
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem(`${this.access_token}`))
+   });
+    return this.http.get(`${this.baseUrl}/${id}`, { headers: reqHeader });
   }
 
   createPerson(person: Object): Observable<Object> {
-    let tokenParse = JSON.parse(`${this.access_token}`)
-    return this.http.post(`${this.baseUrl}`, person, { headers:new HttpHeaders().append('Authorization', `Bearer ${tokenParse}`)});
+    var reqHeader = new HttpHeaders({ 
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem(`${this.access_token}`))
+    });
+    return this.http.post(`${this.baseUrl}`, person, { headers: reqHeader });
   }
 
   updatePerson(id: number, value: any): Observable<Object> {
-    let tokenParse = JSON.parse(`${this.access_token}`)
-    return this.http.put(`${this.baseUrl}/${id}`, value, { headers:new HttpHeaders().append('Authorization', `Bearer ${tokenParse}`)});
+    var reqHeader = new HttpHeaders({ 
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem(`${this.access_token}`))
+    });
+    return this.http.put(`${this.baseUrl}/${id}`, value, { headers: reqHeader });
   }
 
   deletePerson(id: number): Observable<any> {
-    let tokenParse = JSON.parse(`${this.access_token}`)
-    return this.http.delete(`${this.baseUrl}/${id}`, { headers:new HttpHeaders().append('Authorization', `Bearer ${tokenParse}`)});
+    var reqHeader = new HttpHeaders({ 
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem(`${this.access_token}`))
+    });
+    return this.http.delete(`${this.baseUrl}/${id}`, { headers: reqHeader });
   }
 
   getPersonsList(): Observable<any> {
-    let tokenParse = JSON.parse(`${this.access_token}`)  
-    return this.http.get(`${this.baseUrl}`, { headers:new HttpHeaders().append('Authorization', `Bearer ${tokenParse}`)});
+    var reqHeader = new HttpHeaders({ 
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem(`${this.access_token}`))
+    });
+    return this.http.get(`${this.baseUrl}`, { headers: reqHeader });
   }
 }
