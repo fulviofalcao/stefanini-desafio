@@ -1,0 +1,30 @@
+<h2>Person Details</h2> 
+
+<hr/>
+<div *ngIf="person">
+  <div>
+    <label><b>Full Name: </b></label> {{person.fullName}}
+  </div>
+  <div>
+    <label><b>Gender: </b></label> {{person.gender}}
+  </div>
+  <div>
+    <label><b>Email Id: </b></label> {{person.emailId}}
+  </div> 
+  <div>
+    <label><b>Date Birth: </b></label> {{person.dateBirth}}
+  </div>
+  <div>
+    <label><b>Place to Birth: </b></label> {{person.placeBirth}}
+  </div>
+  <div>
+    <label><b>Nationality: </b></label> {{person.nationality}}
+  </div>
+  <div>
+    <label><b>CPF: </b></label> {{person.cpf}}
+  </div> 
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Person List</button><br>
